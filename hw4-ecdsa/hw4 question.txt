@@ -1,0 +1,30 @@
+https://almondine-song-c43.notion.site/Homework-4-ec8534279e2045479353509d5c3c73a1
+# Homework 4
+
+Use this resource as a reference for implementing the algorithm: https://cryptobook.nakov.com/digital-signatures/ecdsa-sign-verify-messages
+
+The following may also be helpful:
+
+https://www.rareskills.io/post/finite-fields
+
+https://www.rareskills.io/post/elliptic-curve-addition
+
+https://www.rareskills.io/post/elliptic-curves-finite-fields
+
+https://rareskills.io/post/ecdsa-tutorial
+
+Implement ECDSA from scratch. You want to use the secp256k1 curve (which specifies the values for the curve). When starting off, use the Elliptic curve multiplication library used in the blog post linked here: https://www.rareskills.io/post/generate-ethereum-address-from-private-key-python
+
+1) pick a private key
+
+2) generate the public key using that private key (not the eth address, the public key)
+
+3) pick message m and hash it to produce h (h can be though of as a 256 bit number)
+
+4) sign m using your private key and a randomly chosen nonce k. produce (r, s, h, PubKey)
+
+5) verify (r, s, h, PubKey) is valid
+
+You may use a library for point multiplication, but everything else you must do from scratch. Remember, when you compute the multiplicative inverse, you need to do it with respect to the curve order.
+
+Pay close attention to the distinction between the curve order and the prime number $p$ we compute the modulus of $y^2=x^3+b \pmod p$.
